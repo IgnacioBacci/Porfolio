@@ -1,4 +1,4 @@
-let currentProjectIndex = 1; // Comenzar con el segundo proyecto como activo
+let currentProjectIndex = 0;
 const projects = document.querySelectorAll('.project-item');
 
 function updateProjects() {
@@ -12,7 +12,7 @@ function updateProjects() {
             project.style.transform = 'scale(1)';
         }
     });
-    // Mover la galería para centrar el proyecto activo
+   
     document.querySelector('.project-gallery').style.transform = `translateX(calc(${-currentProjectIndex * 100}% / 3))`;
 }
 
@@ -26,5 +26,5 @@ function nextProject() {
     updateProjects();
 }
 
-// Inicializa la primera vista
+
 updateProjects();
