@@ -3,137 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title>Ignacio Bacci | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="cursor-glow"></div>
 	<header>
-        <div class="logo">Mi Portfolio</div>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li class="lang-flag-container" id="lang-container">
-                    <img src="IMG/spain-flag.png" alt="Español" onclick="toggleLanguageMenu()" class="lang-flag" id="es-flag">
-                    <ul class="lang-menu" id="lang-menu">
-                        <li><img src="IMG/spain-flag.png" alt="Español" onclick="changeLanguage('es')"></li>
-                        <li><img src="IMG/uk-flag.jpg" alt="English" onclick="changeLanguage('en')"></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">IB</div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#inicio" data-i18n="nav-home">Inicio</a></li>
+                    <li><a href="#sobre-mi" data-i18n="nav-about">Sobre Mí</a></li>
+                    <li><a href="#proyectos" data-i18n="nav-projects">Proyectos</a></li>
+                    <li><a href="#contacto" data-i18n="nav-contact">Contacto</a></li>
+                    <li class="lang-flag-container">
+                        <div class="current-lang" id="lang-toggle">
+                            <img src="IMG/spain-flag.png" alt="ES" class="lang-flag" id="active-flag">
+                        </div>
+                        <ul class="lang-menu" id="lang-menu">
+                            <li onclick="changeLanguage('es')">
+                                <img src="IMG/spain-flag.png" alt="ES"> <span>ES</span>
+                            </li>
+                            <li onclick="changeLanguage('en')">
+                                <img src="IMG/uk-flag.jpg" alt="EN"> <span>EN</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
-    <section id="inicio" class="hero" data-aos="fade-up">
-        <h1>Bienvenido a Mi Portfolio</h1>
-    </section>
-    
-    <section id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <p>Me llamo Ignacio Bacci soy un desarrollador backend con experiencia en 
-        Python, PHP, Java, JavaScript, SQL, CSS y HTML.
-        Especializado en la creación de sistemas sólidos y escalables. Certificado en inteligencia artificial por GitHub.
-        </p>
-        <ul class="skills">
-            <li>HTML</li>
-            <li>PHP</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>SQL</li>
-			<li>Unity</li>
-        </ul>
-    </section>
-    
-    <section id="proyectos">
-        <h2>Proyectos</h2>
-        <div class="carousel-container">
-            <button class="carousel-button left" onclick="prevProject()">&#9664;</button>
-            <div class="project-gallery">
-                <div class="project-item active">
-                    <img src="IMG/calc.png" alt="Proyecto 1">
-                    <div class="project-info">
-                        <h3>Calculadora</h3>
-                        <p>Simple calculadora hecha con python</p>
-                        <a href="https://github.com/IgnacioBacci/Calculator" target="_blank">Ver en GitHub</a>
-                    </div>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content" data-aos="zoom-out">
+                <h1 data-i18n="hero-title">Creatividad & Código</h1>
+                <p data-i18n="hero-subtitle">Desarrollador Backend | Especialista en Sistemas Escalables</p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn primary" data-i18n="hero-btn-work">Ver Proyectos</a>
+                    <a href="#contacto" class="btn secondary" data-i18n="hero-btn-contact">Hablemos</a>
                 </div>
-                
-                <div class="project-item">
-                    <img src="IMG/survivors.png" alt="Proyecto 2">
-                    <div class="project-info">
-                        <h3>Survivors game (WIP)</h3>
-                        <p>Juego estilo "Survivors" de un robot. Hecho con Pygame (Python)</p>
-                        <a href="https://github.com/IgnacioBacci/Robot-Survivor" target="_blank">Ver en GitHub</a>
-                    </div>
-                </div>
-
-		<div class="project-item">
-                    <img src="IMG/Dungeon.png" alt="Proyecto 3">
-                    <div class="project-info">
-                        <h3>RPG Dungeon Crawler</h3>
-                        <p>Demo de juego Dungeon Crawler con 3 combates</p>
-                        <a href="https://github.com/IgnacioBacci/Dungeon" target="_blank">Ver en GitHub</a>
-                    </div>
-                </div>
-				
-		<div class="project-item">
-                    <img src="IMG/3DProyect.png" alt="Proyecto 4">
-                    <div class="project-info">
-                        <h3>3D Movement</h3>
-                        <p>Prueba de movimiento 3D y gravedad de Unity.</p>
-                        <a href="https://github.com/IgnacioBacci/3DProject" target="_blank">Ver en GitHub</a>
-                    </div>
-                </div>
-                
-				
-               
-                <!-- Agrega más proyectos aquí -->
             </div>
-            <button class="carousel-button right" onclick="nextProject()">&#9654;</button>
-        </div>
-    </section>
-    
-	<section id="contacto">
-		<h2>Contacto</h2>
-		<form id="contact-form">
-			<div class="form-group">
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre" required>
-			</div>
-			<div class="form-group">
-				<label for="email">Correo Electrónico:</label>
-				<input type="email" id="email" name="email" required>
-			</div>
-			<div class="form-group">
-				<label for="mensaje">Mensaje:</label>
-				<textarea id="mensaje" name="mensaje" required></textarea>
-			</div>
-			<button type="submit">Enviar</button>
-		</form>
-		<div class="social-media">
-			<a href="https://www.linkedin.com/in/ignacio-bacci-9547b3306/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-			<a href="https://github.com/IgnacioBacci" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-		</div>
-	</section>
+            <div class="hero-bg-accent"></div>
+        </section>
+        
+        <section id="sobre-mi">
+            <div class="container">
+                <h2 data-i18n="about-title">Sobre Mí</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p data-i18n="about-text">
+                            Me llamo Ignacio Bacci, soy un desarrollador backend apasionado por crear soluciones eficientes. 
+                            Especializado en sistemas sólidos and escalables, con una certificación en IA por GitHub.
+                        </p>
+                    </div>
+                    <div class="skills-wrapper">
+                        <h3 data-i18n="skills-title">Tecnologías</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item"><i class="fab fa-python"></i> <span>Python</span></div>
+                            <div class="skill-item"><i class="fab fa-java"></i> <span>Java</span></div>
+                            <div class="skill-item"><i class="fab fa-php"></i> <span>PHP</span></div>
+                            <div class="skill-item"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                            <div class="skill-item"><i class="fas fa-database"></i> <span>SQL</span></div>
+                            <div class="skill-item"><i class="fab fa-unity"></i> <span>Unity</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proyectos">
+            <div class="container">
+                <h2 data-i18n="projects-title">Proyectos</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-img">
+                            <img src="IMG/calc.png" alt="Calculadora">
+                        </div>
+                        <div class="project-info">
+                            <h3>Calculadora</h3>
+                            <p data-i18n="project1-desc">Calculadora funcional desarrollada íntegramente en Python.</p>
+                            <div class="project-tags"><span>Python</span></div>
+                            <a href="https://github.com/IgnacioBacci/Calculator" target="_blank" class="btn-project"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-img">
+                            <img src="IMG/survivors.png" alt="Robot Survivor">
+                        </div>
+                        <div class="project-info">
+                            <h3>Robot Survivor</h3>
+                            <p data-i18n="project2-desc">Juego estilo Survivors desarrollado con Pygame.</p>
+                            <div class="project-tags"><span>Python</span><span>Pygame</span></div>
+                            <a href="https://github.com/IgnacioBacci/Robot-Survivor" target="_blank" class="btn-project"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-img">
+                            <img src="IMG/Dungeon.png" alt="RPG Dungeon">
+                        </div>
+                        <div class="project-info">
+                            <h3>Dungeon Crawler</h3>
+                            <p data-i18n="project3-desc">Explorador de mazmorras RPG con sistema de combate.</p>
+                            <div class="project-tags"><span>Unity</span><span>C#</span><span>GameDev</span></div>
+                            <a href="https://github.com/IgnacioBacci/Dungeon" target="_blank" class="btn-project"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-img">
+                            <img src="IMG/3DProyect.png" alt="Unity 3D">
+                        </div>
+                        <div class="project-info">
+                            <h3>3D Movement</h3>
+                            <p data-i18n="project4-desc">Sistema de físicas y movimiento en entorno 3D de Unity.</p>
+                            <div class="project-tags"><span>Unity</span><span>C#</span></div>
+                            <a href="https://github.com/IgnacioBacci/3DProject" target="_blank" class="btn-project"><i class="fab fa-github"></i> Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacto">
+            <div class="container">
+                <h2 data-i18n="contact-title">Contacto</h2>
+                <div class="contact-flex">
+                    <form id="contact-form" class="glass-form">
+                        <div class="form-group">
+                            <label for="nombre" data-i18n="form-name">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="form-email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" data-i18n="form-msg">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required placeholder="Hablemos de tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn primary full" data-i18n="form-send">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info">
+                        <p data-i18n="contact-outro">¿Tienes una idea? Estoy disponible para nuevos proyectos y colaboraciones.</p>
+                        <div class="social-media">
+                            <a href="https://www.linkedin.com/in/ignacio-bacci-9547b3306/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/IgnacioBacci" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <footer>
-        <p>&copy; 2024 Ignacio Bacci. Todos los derechos reservados.</p>
+        <div class="container">
+            <p data-i18n="footer-text">&copy; 2024 Ignacio Bacci. Todos los derechos reservados.</p>
+        </div>
     </footer>
     
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="section.js"></script>
-    <script src="carusel.js"></script>
-    <script src="contact-form.js"></script>
+    <script src="lenguaje.js"></script>
 	<script src="scroll.js"></script>
-	<script src="lenguaje.js"></script>
+    <script src="contact-form.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-	    <script>
-        AOS.init();
+	<script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Custom Cursor Glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.cursor-glow');
+            if (glow) {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            }
+        });
     </script>
 </body>
 </html>

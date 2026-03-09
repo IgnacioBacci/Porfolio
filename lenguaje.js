@@ -1,63 +1,101 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const langFlag = document.getElementById("es-flag"); // Cambiado a es-flag para obtener la bandera correctamente
-    const langMenu = document.getElementById("lang-menu");
+const translations = {
+    es: {
+        "nav-home": "Inicio",
+        "nav-about": "Sobre Mí",
+        "nav-projects": "Proyectos",
+        "nav-contact": "Contacto",
+        "hero-title": "Creatividad & Código",
+        "hero-subtitle": "Desarrollador Backend | Especialista en Sistemas Escalables",
+        "hero-btn-work": "Ver Proyectos",
+        "hero-btn-contact": "Hablemos",
+        "about-title": "Sobre Mí",
+        "about-text": "Me llamo Ignacio Bacci, soy un desarrollador backend apasionado por crear soluciones eficientes. Especializado en sistemas sólidos y escalables, con una certificación en IA por GitHub.",
+        "skills-title": "Tecnologías",
+        "projects-title": "Proyectos",
+        "project1-desc": "Calculadora funcional desarrollada íntegramente en Python.",
+        "project2-desc": "Juego estilo Survivors desarrollado con Pygame.",
+        "project3-desc": "Explorador de mazmorras RPG con sistema de combate.",
+        "project4-desc": "Sistema de físicas y movimiento en entorno 3D de Unity.",
+        "contact-title": "Contacto",
+        "form-name": "Nombre",
+        "form-email": "Email",
+        "form-msg": "Mensaje",
+        "form-send": "Enviar Mensaje",
+        "contact-outro": "¿Tienes una idea? Estoy disponible para nuevos proyectos y colaboraciones.",
+        "footer-text": "© 2024 Ignacio Bacci. Todos los derechos reservados."
+    },
+    en: {
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-projects": "Projects",
+        "nav-contact": "Contact",
+        "hero-title": "Creativity & Code",
+        "hero-subtitle": "Backend Developer | Scalable Systems Specialist",
+        "hero-btn-work": "View Projects",
+        "hero-btn-contact": "Let's Talk",
+        "about-title": "About me",
+        "about-text": "I'm Ignacio Bacci, a backend developer passionate about creating efficient solutions. Specialized in solid and scalable systems, with an AI certification by GitHub.",
+        "skills-title": "Technologies",
+        "projects-title": "Projects",
+        "project1-desc": "Functional calculator developed entirely in Python.",
+        "project2-desc": "Survivors-style game developed with Pygame.",
+        "project3-desc": "RPG Dungeon Crawler with combat system.",
+        "project4-desc": "Physics and movement system in Unity 3D environment.",
+        "contact-title": "Contact",
+        "form-name": "Name",
+        "form-email": "Email",
+        "form-msg": "Message",
+        "form-send": "Send Message",
+        "contact-outro": "Have an idea? I'm available for new projects and collaborations.",
+        "footer-text": "© 2024 Ignacio Bacci. All rights reserved."
+    }
+};
 
-    langFlag.addEventListener("click", function(event) {
-        event.stopPropagation(); // Evita que el evento se propague y cierre el menú inmediatamente
+document.addEventListener("DOMContentLoaded", () => {
+    const langToggle = document.getElementById("lang-toggle");
+    const langMenu = document.getElementById("lang-menu");
+    const savedLang = localStorage.getItem("portfolio-lang") || "es";
+    
+    // Initialize language
+    changeLanguage(savedLang);
+
+    // Toggle menu
+    langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         langMenu.classList.toggle("show");
     });
 
-    document.addEventListener("click", function(event) {
-        if (!langFlag.contains(event.target) && !langMenu.contains(event.target)) {
-            langMenu.classList.remove("show");
-        }
+    // Close menu on click outside
+    document.addEventListener("click", () => {
+        langMenu.classList.remove("show");
     });
 });
 
 function changeLanguage(lang) {
-    const currentFlag = document.getElementById('es-flag'); // Cambiado a es-flag para obtener la bandera correctamente
-    const langMenu = document.getElementById('lang-menu');
+    // Update local storage
+    localStorage.setItem("portfolio-lang", lang);
     
-    if (lang === 'es') {
-        currentFlag.src = 'IMG/spain-flag.png';
-        currentFlag.alt = 'Español';
-        // Cambiar texto a español
-        document.getElementById('inicio').querySelector('h1').textContent = 'Bienvenido a Mi Portfolio';
-        document.getElementById('sobre-mi').querySelector('h2').textContent = 'Sobre Mí';
-        document.getElementById('sobre-mi').querySelector('p').textContent = 'Me llamo Ignacio Bacci, soy un desarrollador backend con experiencia en Python, PHP, Java, JavaScript, SQL, CSS y HTML. Especializado en la creación de sistemas sólidos y escalables. Certificado en inteligencia artificial por GitHub.';
-        document.querySelector('nav a[href="#inicio"]').textContent = 'Inicio';
-        document.querySelector('nav a[href="#sobre-mi"]').textContent = 'Sobre Mí';
-        document.querySelector('nav a[href="#proyectos"]').textContent = 'Proyectos';
-        document.querySelector('nav a[href="#contacto"]').textContent = 'Contacto';
-        document.getElementById('proyectos').querySelector('h2').textContent = 'Proyectos';
-        document.getElementById('contacto').querySelector('h2').textContent = 'Contacto';
-        document.querySelector('form label[for="nombre"]').textContent = 'Nombre:';
-        document.querySelector('form label[for="email"]').textContent = 'Correo Electrónico:';
-        document.querySelector('form label[for="mensaje"]').textContent = 'Mensaje:';
-        document.querySelector('form button[type="submit"]').textContent = 'Enviar';
-        document.querySelector('footer p').textContent = '© 2024 Ignacio Bacci. Todos los derechos reservados.';
-    } else if (lang === 'en') {
-        currentFlag.src = 'IMG/uk-flag.jpg';
-        currentFlag.alt = 'English';
-        // Cambiar texto a inglés
-        document.getElementById('inicio').querySelector('h1').textContent = 'Welcome to My Portfolio';
-        document.getElementById('sobre-mi').querySelector('h2').textContent = 'About Me';
-        document.getElementById('sobre-mi').querySelector('p').textContent = 'My name is Ignacio Bacci. I am a backend developer with experience in Python, PHP, Java, JavaScript, SQL, CSS, and HTML. Specialized in building solid and scalable systems. Certified in artificial intelligence by GitHub.';
-        document.querySelector('nav a[href="#inicio"]').textContent = 'Home';
-        document.querySelector('nav a[href="#sobre-mi"]').textContent = 'About Me';
-        document.querySelector('nav a[href="#proyectos"]').textContent = 'Projects';
-        document.querySelector('nav a[href="#contacto"]').textContent = 'Contact';
-        document.getElementById('proyectos').querySelector('h2').textContent = 'Projects';
-        document.getElementById('contacto').querySelector('h2').textContent = 'Contact';
-        document.querySelector('form label[for="nombre"]').textContent = 'Name:';
-        document.querySelector('form label[for="email"]').textContent = 'Email:';
-        document.querySelector('form label[for="mensaje"]').textContent = 'Message:';
-        document.querySelector('form button[type="submit"]').textContent = 'Send';
-        document.querySelector('footer p').textContent = '© 2024 Ignacio Bacci. All rights reserved.';
-    }
+    // Update UI text
+    const elements = document.querySelectorAll("[data-i18n]");
+    elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translations[lang][key];
+            } else {
+                el.textContent = translations[lang][key];
+            }
+        }
+    });
 
-    // Ocultar el menú después de cambiar el idioma y la bandera
-    langMenu.classList.remove("show");
+    // Update flag and HTML lang
+    const activeFlag = document.getElementById("active-flag");
+    if (activeFlag) {
+        activeFlag.src = lang === 'es' ? 'IMG/spain-flag.png' : 'IMG/uk-flag.jpg';
+        activeFlag.alt = lang.toUpperCase();
+    }
+    document.documentElement.lang = lang;
 }
+
 
 
