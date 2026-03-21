@@ -17,7 +17,7 @@ const translations = {
         "project3-desc": "Explorador de mazmorras RPG con sistema de combate.",
         "project4-desc": "Sistema de físicas y movimiento en entorno 3D de Unity.",
         "project5-desc": "Generador de backstory para personajes de D&D utilizando AI.".
-        "project6-desc": "Aplicaicon Web que muestra informacion del clima en diferentes partes del mundo.".
+        "project6-desc": "Aplicación Web que muestra informacion del clima en diferentes partes del mundo.".
         "contact-title": "Contacto",
         "form-name": "Nombre",
         "form-email": "Email",
