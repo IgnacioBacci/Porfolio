@@ -16,6 +16,8 @@ const translations = {
         "project2-desc": "Juego estilo Survivors desarrollado con Pygame.",
         "project3-desc": "Explorador de mazmorras RPG con sistema de combate.",
         "project4-desc": "Sistema de físicas y movimiento en entorno 3D de Unity.",
+        "project5-desc": "Generador de backstory para personajes de D&D utilizando AI.".
+        "project6-desc": "Aplicaicon Web que muestra informacion del clima en diferentes partes del mundo.".
         "contact-title": "Contacto",
         "form-name": "Nombre",
         "form-email": "Email",
@@ -41,6 +43,8 @@ const translations = {
         "project2-desc": "Survivors-style game developed with Pygame.",
         "project3-desc": "RPG Dungeon Crawler with combat system.",
         "project4-desc": "Physics and movement system in Unity 3D environment.",
+         "project5-desc": "Background generator for D&D characters using AI.".
+        "project6-desc": "Web application that displays weather information in different parts of the world.".
         "contact-title": "Contact",
         "form-name": "Name",
         "form-email": "Email",
