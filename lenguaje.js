@@ -18,6 +18,7 @@ const translations = {
         "project4-desc": "Sistema de físicas y movimiento en entorno 3D de Unity.",
         "project5-desc": "Generador de backstory para personajes de D&D utilizando AI.".
         "project6-desc": "Aplicación Web que muestra informacion del clima en diferentes partes del mundo.".
+        "project7-desc":"Aplicación Web que permite crear musica colaborando de manera anonima con otras personas."
         "contact-title": "Contacto",
         "form-name": "Nombre",
         "form-email": "Email",
@@ -45,6 +46,7 @@ const translations = {
         "project4-desc": "Physics and movement system in Unity 3D environment.",
          "project5-desc": "Background generator for D&D characters using AI.".
         "project6-desc": "Web application that displays weather information in different parts of the world.".
+        "project7-desc":"Web application that allows you to create music by collaborating anonymously with other people."
         "contact-title": "Contact",
         "form-name": "Name",
         "form-email": "Email",
